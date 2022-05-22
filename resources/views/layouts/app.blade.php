@@ -33,11 +33,11 @@
 </head>
 <body>
     <div id="app">
-        {{-- <div class="loader">
+        <div class="loader">
             <div class="loader-inner">
                 <div class="circle"></div>
             </div>
-        </div> --}}
+        </div>        
         <!-- header -->
         <div class="top-header-area" id="sticker">
             <div class="container">
@@ -55,22 +55,17 @@
                             <!-- menu start -->
                             <nav class="main-menu">
                                 <ul>
-                                    <li class="current-list-item"><a href="#">Home</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="index.html">Static Home</a></li>
-                                            <li><a href="index_2.html">Slider Home</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="{{ route('frontend.index') }}">Home</a></li>
+                                    <li><a href="{{ route('frontend.about') }}">About</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="sub-menu">
-                                            <li><a href="404.html">404 page</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="checkout.html">Check Out</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="news.html">News</a></li>
-                                            <li><a href="shop.html">Shop</a></li>
+                                            {{-- <li><a href="{{ route('frontend.404') }}">404 page</a></li> --}}
+                                            <li><a href="{{ route('frontend.about') }}">About</a></li>
+                                            <li><a href="{{ route('frontend.cart') }}">Cart</a></li>
+                                            <li><a href="{{ route('frontend.checkout') }}">Check Out</a></li>
+                                            <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
+                                            {{-- <li><a href="{{ route('frontend.news') }}">News</a></li> --}}
+                                            <li><a href="{{ route('frontend.shop') }}">Shop</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="news.html">News</a>
@@ -79,13 +74,13 @@
                                             <li><a href="single-news.html">Single News</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
                                     <li><a href="shop.html">Shop</a>
                                         <ul class="sub-menu">
-                                            <li><a href="shop.html">Shop</a></li>
-                                            <li><a href="checkout.html">Check Out</a></li>
-                                            <li><a href="single-product.html">Single Product</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="{{ route('frontend.shop') }}">Shop</a></li>
+                                            <li><a href="{{ route('frontend.checkout') }}">Check Out</a></li>
+                                            <li><a href="{{ route('frontend.singleProduct') }}">Single Product</a></li>
+                                            <li><a href="{{ route('frontend.cart') }}">Cart</a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -179,7 +174,7 @@
                                 <li><a href="about.html">About</a></li>
                                 <li><a href="services.html">Shop</a></li>
                                 <li><a href="news.html">News</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="contact">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -227,8 +222,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" ></script>
     
-	{{-- <script src="assets/js/jquery-1.11.3.min.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script> --}}
+	<script src="{{ asset('frontend/js/jquery-1.11.3.min.js')}}"></script>
+	<script src="{{ asset('frontend/bootstrap/js/bootstrap.min.js')}}"></script> 
 	<script src="{{ asset('frontend/js/jquery.countdown.js')}}"></script>
 	<script src="{{ asset('frontend/js/jquery.isotope-3.0.6.min.js')}}"></script>
 	<script src="{{ asset('frontend/js/waypoints.js')}}"></script>

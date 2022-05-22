@@ -59,23 +59,15 @@
                                     <li><a href="{{ route('frontend.about') }}">About</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="sub-menu">
-                                            {{-- <li><a href="{{ route('frontend.404') }}">404 page</a></li> --}}
                                             <li><a href="{{ route('frontend.about') }}">About</a></li>
                                             <li><a href="{{ route('frontend.cart') }}">Cart</a></li>
                                             <li><a href="{{ route('frontend.checkout') }}">Check Out</a></li>
                                             <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
-                                            {{-- <li><a href="{{ route('frontend.news') }}">News</a></li> --}}
                                             <li><a href="{{ route('frontend.shop') }}">Shop</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="news.html">News</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="news.html">News</a></li>
-                                            <li><a href="single-news.html">Single News</a></li>
-                                        </ul>
-                                    </li>
                                     <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
-                                    <li><a href="shop.html">Shop</a>
+                                    <li><a href="{{ route('frontend.shop') }}">Shop</a>
                                         <ul class="sub-menu">
                                             <li><a href="{{ route('frontend.shop') }}">Shop</a></li>
                                             <li><a href="{{ route('frontend.checkout') }}">Check Out</a></li>
@@ -85,7 +77,7 @@
                                     </li>
                                     <li>
                                         <div class="header-icons">
-                                            <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                                            <a class="shopping-cart" href="{{ route('frontend.cart') }}"><i class="fas fa-shopping-cart"></i></a>
                                             <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                                         </div>
                                     </li>
@@ -120,9 +112,7 @@
         </div>
         <!-- end search area -->
 
-       
             @yield('content')
-            
 
         <!-- logo carousel -->
         <div class="logo-carousel-section">

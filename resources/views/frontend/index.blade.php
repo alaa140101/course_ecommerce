@@ -2,7 +2,7 @@
 
 @section('content')
 	<!-- hero area -->
-	<div class="hero-area hero-bg">
+	<div class="hero-area hero-bg" style="height: 75vh">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 offset-lg-2 text-center">

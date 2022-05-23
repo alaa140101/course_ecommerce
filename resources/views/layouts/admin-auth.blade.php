@@ -17,9 +17,12 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+   	<link rel="shortcut icon" type="{{asset('favicon.ico')}}">
+
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{asset('backend/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
+    @yield('style')
 </head>
 
 <body class="bg-gradient-primary">
@@ -43,10 +46,14 @@
 
     </div>
 
+    <script src="{{ asset('js/app.js') }}" ></script>
+
     <script src="{{asset('backend/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('backend/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
     <script src="{{asset('backend/js/sb-admin-2.min.js')}}"></script>
+
+    @yield('script')
 
 </body>
 

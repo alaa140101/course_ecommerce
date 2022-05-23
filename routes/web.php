@@ -14,6 +14,9 @@ Route::get('/contact', [FrontendController::class,'contact'])->name('frontend.co
 
 
 Route::get('/admin/login', [BackendController::class,'login'])->name('backend.login');
+Route::get('/admin', [BackendController::class,'index'])->name('backend.index');
+Route::get('/admin/blank', [BackendController::class,'blank'])->name('backend.blank');
+Route::get('/admin/forgot-password', [BackendController::class,'forgot_password'])->name('backend.forgot-password');
 
 
 Auth::routes();

@@ -186,6 +186,9 @@ return [
          * Package Service Providers...
          */
 
+        Mindscms\Entrust\EntrustServiceProvider::class,
+
+
         /*
          * Application Service Providers...
          */
@@ -210,6 +213,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Entrust'   => Mindscms\Entrust\EntrustFacade::class,
     ])->toArray(),
 
 ];

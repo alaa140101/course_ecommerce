@@ -36,10 +36,10 @@
                               </ul>
                           </li>
                             @guest 
-                            <li><a href="#">User</a>
+                            <li><i class="fas fa-user text-white"></i>
                                 <ul class="sub-menu">
-                                    <li><a href="{{route('login')}}" class="btn-user "><i class="fas fa-user-alt mr-1 text-gray"></i>Login</a></li>
-                                    <li><a href="{{route('register')}}" class="btn-user "><i class="fas fa-user-alt mr-1 text-gray"></i>Register</a></li>
+                                    <li><a href="{{route('login')}}">Login</a></li>
+                                    <li><a href="{{route('register')}}">Register</a></li>
                                 </ul>
                             </li>      
                             @else
@@ -54,14 +54,14 @@
                                 </li>                                    
                             @endguest
                           
-                            {{-- <li>
+                            <li>
                                 <div class="header-icons">
                                     <a class="shopping-cart" href="{{ route('frontend.cart') }}"><i class="fas fa-shopping-cart"></i></a>
                                     <a href="#"><i class="fa fa-heart"></i></a>
                                     <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                                    
                                 </div>
-                            </li>                         --}}
+                            </li>                        
                       </ul>
                   </nav>
                   <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>

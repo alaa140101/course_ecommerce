@@ -1,10 +1,24 @@
 @extends('layouts.app')
 
 @section('breadcrumb')
-	<p>{{__("Login to our website")}}</p>
-@endsection
+ <!-- breadcrumb-section -->
+ <div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p>{{__("Login to our website")}}</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<!-- end breadcrumb section -->
     
+@endsection
+
 @section('content')
+
 <section>
     <div class="py-5">
         <div class="d-flex justify-content-center"> 
@@ -69,7 +83,7 @@
 
                         @if (Route::has('register'))
                             <a href="{{route('register')}}" class="btn btn-secondary float-right">
-                            {{__('Have\'t an account?')}}
+                            {{__('Have\'t an account3?')}}
                             </a>                            
                         @endif
                     </div>

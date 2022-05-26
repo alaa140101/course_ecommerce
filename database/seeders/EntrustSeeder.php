@@ -40,6 +40,7 @@ class EntrustSeeder extends Seeder
         $admin = User::create([
             'first_name' => 'Admin',
             'last_name' => 'System',
+            'username' => 'adminUser',
             'phone' => '9665000001',
             'email' => 'admin@ecommerce.test',
             'email_verified_at' => now(),
@@ -53,6 +54,7 @@ class EntrustSeeder extends Seeder
         $supervisor = User::create([
             'first_name' => 'Supervisor',
             'last_name' => 'System',
+            'username' => 'supervisorUser',
             'phone' => '9665000002',
             'email' => 'supervisor@ecommerce.test',
             'email_verified_at' => now(),
@@ -63,7 +65,7 @@ class EntrustSeeder extends Seeder
         ]);
         $supervisor->attachRole($supervisorRole);
 
-        $customers = User::factory(10)->create();
+        $customers = User::factory(20)->create();
 
         $customers->each(function ($customer) use ($customerRole) { 
             $customer->attachRole($customerRole);

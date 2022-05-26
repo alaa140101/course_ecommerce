@@ -38,61 +38,7 @@
                 <div class="circle"></div>
             </div>
         </div>        
-        <!-- header -->
-        <div class="top-header-area" id="sticker">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12 text-center">
-                        <div class="main-menu-wrap">
-                            <!-- logo -->
-                            <div class="site-logo">
-                                <a href="index.html">
-                                    <img src="{{ asset('frontend/img/logo.png')}}" alt="">
-                                </a>
-                            </div>
-                            <!-- logo -->
-
-                            <!-- menu start -->
-                            <nav class="main-menu">
-                                <ul>
-                                    <li><a href="{{ route('frontend.index') }}">Home</a></li>
-                                    <li><a href="{{ route('frontend.about') }}">About</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{ route('frontend.about') }}">About</a></li>
-                                            <li><a href="{{ route('frontend.cart') }}">Cart</a></li>
-                                            <li><a href="{{ route('frontend.checkout') }}">Check Out</a></li>
-                                            <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
-                                            <li><a href="{{ route('frontend.shop') }}">Shop</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
-                                    <li><a href="{{ route('frontend.shop') }}">Shop</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{ route('frontend.shop') }}">Shop</a></li>
-                                            <li><a href="{{ route('frontend.checkout') }}">Check Out</a></li>
-                                            <li><a href="{{ route('frontend.singleProduct') }}">Single Product</a></li>
-                                            <li><a href="{{ route('frontend.cart') }}">Cart</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <div class="header-icons">
-                                            <a class="shopping-cart" href="{{ route('frontend.cart') }}"><i class="fas fa-shopping-cart"></i></a>
-                                            <a href="#"><i class="fa fa-heart"></i></a>
-                                            <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-                            <div class="mobile-menu"></div>
-                            <!-- menu end -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end header -->
+        @include('partial.frontend.header')
 
         <!-- search area -->
         <div class="search-area">
@@ -112,23 +58,10 @@
             </div>
         </div>
         <!-- end search area -->
-        @if (!request()->routeIs('frontend.index'))            
-        <!-- breadcrumb-section -->
-        <div class="breadcrumb-section breadcrumb-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 offset-lg-2 text-center">
-                        <div class="breadcrumb-text">
-                            @yield('breadcrumb')
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-	    <!-- end breadcrumb section -->
-        @endif
 
-
+        @yield('breadcrumb')
+        {{-- request()->routeIs('frontend.index'))             --}}
+       
             @yield('content')
 
         <!-- logo carousel -->
@@ -153,53 +86,7 @@
         </div>
         <!-- end logo carousel -->
 
-    	<!-- footer -->
-        <div class="footer-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-box about-widget">
-                            <h2 class="widget-title">About us</h2>
-                            <p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-box get-in-touch">
-                            <h2 class="widget-title">Get in Touch</h2>
-                            <ul>
-                                <li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-                                <li>support@fruitkha.com</li>
-                                <li>+00 111 222 3333</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-box pages">
-                            <h2 class="widget-title">Pages</h2>
-                            <ul>
-                                <li><a href="{{ route('frontend.index') }}">Home</a></li>
-                                <li><a href="{{ route('frontend.about') }}">About</a></li>
-                                <li><a href="{{ route('frontend.cart') }}">Cart</a></li>
-                                <li><a href="{{ route('frontend.checkout') }}">Check Out</a></li>
-                                <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
-                                <li><a href="{{ route('frontend.shop') }}">Shop</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-box subscribe">
-                            <h2 class="widget-title">Subscribe</h2>
-                            <p>Subscribe to our mailing list to get the latest updates.</p>
-                            <form action="index.html">
-                                <input type="email" placeholder="Email">
-                                <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end footer -->  
+    	@include('partial.frontend.footer') 
 
         <!-- copyright -->
         <div class="copyright">

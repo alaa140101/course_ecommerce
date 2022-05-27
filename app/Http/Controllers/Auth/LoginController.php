@@ -40,8 +40,6 @@ class LoginController extends Controller
 
     public function redirectTo()
     {
-        dd(auth()->user()->roles()->first()->allowed_route);
-        
         if(auth()->user()->roles()->first()->allowed_route != '')
         {
             return $this->redirectTo = auth()->user()->roles()->first()->allowed_route . '/index';
@@ -56,5 +54,6 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+
     }
 }

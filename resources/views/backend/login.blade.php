@@ -11,27 +11,30 @@
                 <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
             </div>
             <form class="user" action="{{ route('login') }}" method="post">
+                @csrf
                 <div class="form-group">
-                    <input type="email" class="form-control form-control-user"
-                        id="exampleInputEmail" aria-describedby="emailHelp"
-                        placeholder="Enter Email Address...">
+                    <input type="text" class="form-control form-control-user" name="username"
+                        id="exampleInputUserName" aria-describedby="usernameHelp"
+                        placeholder="Enter Your Username..." value="{{old('username')}}">
+                        @error('username') <span class="text-danger">{{$message}}</span>   @enderror
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control form-control-user"
-                        id="exampleInputPassword" placeholder="Password">
+                        id="exampleInputPassword" placeholder="Password" name="password">
+                        @error('password') <span class="text-danger">{{$message}}</span>   @enderror
                 </div>
                 <div class="form-group">
                     <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember
-                            Me</label>
+                        <input type="checkbox" class="custom-control-input" name="remember" id="remember" {{old('remember') ? 'checked':''}}>
+                        <label class="custom-control-label" for="remember">Remember
+                            Me</label>                        
                     </div>
                 </div>
                 <button type="submit"class="btn btn-primary btn-user btn-block">Login</button>
             </form>
             <hr>
             <div class="text-center">
-                <a class="small" href="forgot-password.html">Forgot Password?</a>
+                <a class="small" href="{{route('backend.forgot-password')}}">Forgot Password?</a>
             </div>
         </div>
     </div>

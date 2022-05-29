@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Role;
+use App\Models\Permission;
 use App\Models\User;
 use Illuminate\Support\Str;
 
@@ -70,5 +71,37 @@ class EntrustSeeder extends Seeder
         $customers->each(function ($customer) use ($customerRole) { 
             $customer->attachRole($customerRole);
         });
+
+        $manageMain = Permission::create([
+            'name' => 'main',
+            'display_name' => 'Main',
+            'route' => 'index',
+            'module' => 'index',
+            'as' => 'index',
+            'icon' => 'fas fa-home',
+            'parent' => '0',
+            'parent_original' => '0',
+            'sidebar_link' => '1',
+            'appear' => '1',
+            'ordering' => '1',
+        ]);
+        $manageMain->parent_show = $manageMain->id;
+        $manageMain->save();
+        
+        $mangeMain = Permission::create([
+            'name' => '',
+            'display_name' => '',
+            'description' => '',
+            'route' => '',
+            'module' => '',
+            'as' => '',
+            'icon' => '',
+            'parent' => '',
+            'parent_show' => '',
+            'parent_original' => '',
+            'sidebar_link' => '',
+            'appear' => '',
+            'ordering' => '',
+        ]);
     }
 }

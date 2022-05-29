@@ -28,7 +28,7 @@ class Roles
             if(!in_array($route[0], $roleRoutes)) {
                 return $next($request);
             } else {
-                // check if url not equal user allowed route
+                // check if url 1st word is not equal user allowed route
                 if($route[0] != auth()->user()->roles[0]->allowed_route) {
                     // $path = $route[0] == auth()->user()->roles[0]->allowed_route ? $route[0].'.login': '/'.auth()->user()->roles[0]->allowed_route;
                     $path = 'admin.login';

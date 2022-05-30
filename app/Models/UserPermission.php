@@ -4,10 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Mindscms\Entrust\EntrustPermission;
 
-use Illuminate\Database\Eloquent\Model;
-
-class UserPermissions extends Model
+class UserPermission extends EntrustPermission
 {
     protected $guarded = [];
 

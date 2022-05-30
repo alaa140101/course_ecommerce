@@ -25,7 +25,7 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.'], function(){
   Route::group(['middleware'=> ['roles', 'role:admin|supervisor']], function(){
     Route::get('/', [BackendController::class,'index'])->name('index_route');
     Route::get('/index', [BackendController::class,'index'])->name('index');
-    Route::resource('product_categories', [ProductCategoriesController::class]);
+    Route::resource('product_categories', ProductCategoriesController::class);
   });
 
 });

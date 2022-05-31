@@ -22,7 +22,7 @@ class ProductCategory extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'name'
             ]
         ];
     }

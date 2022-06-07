@@ -1,0 +1,9 @@
+composer dumpautoload
+php artisan clear-compiled
+php artisan optimize:clear
+
+
+redis-cli
+FLUSHALL
+exit
+composer dumpautoload

@@ -18,7 +18,7 @@ class ProductSeeder extends Seeder
     public function run()
     {
 
-        $products = Product::factory(1000)->create();
+        $products = Product::factory(1000)->create()->toArray();
 
         $chunks = array_chunk($products, 100);
 

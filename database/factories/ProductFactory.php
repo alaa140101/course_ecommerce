@@ -27,10 +27,10 @@ class ProductFactory extends Factory
             'price'         => $this->faker->numberBetween(5, 200),
             'quantity'    => $this->faker->numberBetween(10, 100),
             'product_category_id'         => $categories->random(),
-            'featured'          => $this->faker->rand(0, 1),
-            'status'          => $this->faker->true,
-            'created_at'          => $this->faker->now(),
-            'updated_at'          => $this->faker->now(),
+            'featured'          => $this->faker->numberBetween(0, 1),
+            'status'          => true,
+            // 'created_at'          => $this->faker->date("Y-m-d H:i:s"),
+            // 'updated_at'          => $this->faker->date("H:i:s Y-m-d"),
         ];
     }
 }

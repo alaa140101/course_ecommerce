@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Arr;
 use Illuminate\Database\Seeder;
+use App\Models\Tag;
+use App\Models\Product;
 
 class ProductsTagsSeeder extends Seeder
 {
@@ -14,6 +17,10 @@ class ProductsTagsSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $tags = Tag::whereStatus(true)->pluck('id')->toArray();
+
+        Product::all()->each(function ($product) use ($tags) {
+            $product->tags()->attach(Arr::random($tags, rand(2, 3)));
+        });
     }
 }

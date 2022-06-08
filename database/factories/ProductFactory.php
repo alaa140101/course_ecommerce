@@ -29,8 +29,8 @@ class ProductFactory extends Factory
             'product_category_id'         => $categories->random(),
             'featured'          => $this->faker->numberBetween(0, 1),
             'status'          => true,
-            // 'created_at'          => $this->faker->date("Y-m-d H:i:s"),
-            // 'updated_at'          => $this->faker->date("H:i:s Y-m-d"),
+            'created_at'          => now()->toDateTimeString(),
+            'updated_at'          => now()->toDateTimeString(),
         ];
     }
 }

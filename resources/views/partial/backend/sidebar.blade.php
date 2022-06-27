@@ -14,11 +14,9 @@
   </a>
 
   <!-- Divider -->
-  <hr class="sidebar-divider my-0">
+  <hr class="sidebar-divider my-0">  
 
-  
-
-  @role(['admin'])
+  @role(['admin'])    
     @foreach ($admin_side_menu as $menu)
     @if (blank($menu->appearedChildren))
     <li class="nav-item {{ $menu->id == getParentShowof($current_page) ? 'active' : null }}">
@@ -39,8 +37,7 @@
                     <span>{{$menu->display_name}}</span>
                 </a>
 
-
-                @if ($menu->appearedChildren !== null && blank($menu->appearedChildren))
+                @if ($menu->appearedChildren !== null && !blank($menu->appearedChildren))
                     <div id="collapse_{{ $menu->route }}" 
                         class="collapse {{ in_array($menu->parent_show, [getParentShowOf($current_page), getParentOf($current_page)]) ?  'show' : null}}" 
                         aria-labelledby="heading_{{ $menu->route }}" 
@@ -55,8 +52,8 @@
                 @endif
             </li>       
         @endif      
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+        <!-- Divider -->
+        <hr class="sidebar-divider">
     @endforeach
   @endrole
   @role(['supervisor'])
